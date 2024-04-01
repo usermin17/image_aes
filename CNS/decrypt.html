@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Decryption</title>
+</head>
+<body>
+    <h1>Image Decryption</h1>
+    
+
+    
+       
+        
+        
+    </form>
+    <form id="imageForm" action="./decryptsuccess.html" method="post" enctype="multipart/form-data">
+        <label for="imageInput">Enter Image path:</label><br>
+        <input type="file" id="imageInput" accept="image/*"><br>
+        <label for="key_value">Enter Key (16/24/32 bytes) for decryption of Image :</label><br>
+        <input type="text" id="key_value" name="key_value"><br>
+        <button type="button" onclick="uploadImage()">Submit</button>
+
+        
+    </form>
+
+    <script>
+        function uploadImage() {
+            // Get the file input element
+            var input = document.getElementById('imageInput');
+
+            // Get the first file selected by the user
+            var file = input.files[0];
+
+            // Check if a file is selected
+            if (file) {
+                // Create a FileReader object
+                var reader = new FileReader();
+
+                // Set up the FileReader onload event
+                reader.onload = function(e) {
+                    // Store the base64 encoded image data in localStorage
+                    localStorage.setItem('imageData', e.target.result);
+                    
+                    // Redirect to page2.html
+                    window.location.href = 'decryptsuccess.html';
+                }
+
+                // Read the image file as a data URL
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file.');
+            }
+        }
+    </script>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Encryption</title>
+</head>
+<body>
+    <h1>Image Encryption</h1>
+    <form id="imageForm" action="./decryptsuccess.html" method="post" enctype="multipart/form-data">
+        <label for="imageInput">Enter Image path:</label><br>
+        <input type="file" id="imageInput" accept="image/*"><br>
+        <label for="key_value">Enter Key (16/24/32 bytes) for decryption of Image :</label><br>
+        <input type="text" id="key_value" name="key_value"><br>
+        <form action="./success.html" method="post">
+            <button type="button" onclick="uploadImage()">
+            <a href="./success.html" class="button">Encrypt</a>
+            </button>
+        </form>
+    </form>
+</body>
+</html>

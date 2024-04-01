@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./decrypt.html">
+</link>
+    <title>Decryption Success</title>
+</head>
+<body>
+    <h1>Decryption Successful!</h1>
+    <p>The image has been decrypted successfully.</p>
+    <div id="imageContainer"></div>
+
+    <script>
+        // Retrieve the image data from localStorage
+        var imageData = localStorage.getItem('imageData');
+
+        // Check if image data is available
+        if (imageData) {
+            // Create an <img> element
+            var img = document.createElement('img');
+
+            // Set the src attribute to the image data
+            img.src = imageData;
+
+            // Append the <img> element to the image container
+            document.getElementById('imageContainer').appendChild(img);
+        } else {
+            alert('No image data available.');
+        }
+    </script> 
+        
+</body>
+</html>
+
+
+
+
